@@ -1,0 +1,15 @@
+.nav-link {padding:0!important;;}
+.nav-title{
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #BBB;
+    font-weight: 500;
+}
+.nav-link{
+    display: block;
+    width: 100%;
+    padding-top: 2px;
+    font-size: 14px;
+    color: #555;
+}
+p{width: 540px;}
