@@ -16,9 +16,9 @@
 
   <body>
     <nav class="navbar navbar-dark bg-dark fixed-top flex-md-nowrap p-1" >
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="">
         <img src="images/cbd-spine.png"  height="30px;" style="padding-right:10px;">
-        CBD Clearing-House UI Kit
+        CBD UI Kit
       </a>
     </nav>
 
@@ -29,24 +29,57 @@
             
             <nav class="navbar navbar-light bg-light">
                 <ul class="nav flex-sm-column">
-                    <li class="nav-item"><span class="nav-title">Brand Guidelines</span></li>
+                    <li class="nav-item"><span class="nav-title">CBD Brand Guidelines</span></li>
                     <li class="nav-item"><a class="nav-link active" href="#" id="logo">Logo</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#">Colors</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#">Type</a></li>
                   </ul>
             </nav>
 
+
             <nav class="navbar navbar-light bg-light">
+              <ul class="nav flex-sm-column">
+                  <li class="nav-item"><span class="nav-title">Portal</span></li>
+                  <li class="nav-item"><a class="nav-link active" href="#" id="logo">Logo</a></li>
+                  <!-- <li class="nav-item"><a class="nav-link active" href="#">Colors</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">Type</a></li> -->
+                </ul>
+          </nav>
+
+            <!-- <nav class="navbar navbar-light bg-light">
                 <ul class="nav flex-sm-column">
                     <li class="nav-item"><span class="nav-title">General considerations</span></li>
                     <li class="nav-item"><a class="nav-link active" href="#">Principals</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Accessibility</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#">Layout</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Resolution</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Spacing</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Social media</a></li>
                   </ul>
             </nav>
+
+            <nav class="navbar navbar-light bg-light">
+              <ul class="nav flex-sm-column">
+                  <li class="nav-item"><span class="nav-title">Main pages</span></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">Homepage</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">Search</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">Explore</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">Submit</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">Country Overview</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">Country Profile</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#">Sign-in</a></li>
+                </ul>
+          </nav> -->
+
+          <nav class="navbar navbar-light bg-light">
+            <ul class="nav flex-sm-column">
+                <li class="nav-item"><span class="nav-title">Page elements</span></li>
+                <li class="nav-item"><a class="nav-link active" href="#" id="formControls">Form controls</a></li>
+                <!-- <li class="nav-item"><a class="nav-link active" href="#">Search results</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Edit forms</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Workflow</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#"></a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Country Overview</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Country Profile</a></li> -->
+              </ul>
+        </nav>
 
           </div>
         </nav>
@@ -87,6 +120,8 @@
     $(document).ready(function(){
       $("#logo").click(function(){
         $('#content').load('logo/logo.html');
+        $("#formControls").click(function(){
+        $('#content').load('formControls/formControls.html');
       });
     });
     </script>

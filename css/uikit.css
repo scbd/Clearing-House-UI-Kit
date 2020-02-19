@@ -13,3 +13,12 @@
     color: #555;
 }
 p{width: 540px;}
+
+body {
+    color: #000;
+    background: #fff;
+    font: 18px/1.67 inter, Arial, "Helvetica Neue", "Helvetica", sans-serif;
+    min-width: 320px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
