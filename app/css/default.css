@@ -1,3 +1,6 @@
+/* bootstrap */
+.btn {background-image: none;}
+
 body {
     color: #333;
     background: #fff;
@@ -17,7 +20,10 @@ body {
 
 .row-absch {padding:20px 0 0 0; margin:0; height:140px;vertical-align: middle;}
 .row-absch h1 {font-size:21px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
-.row-absch .color-absch {color:#069554;text-decoration:none ;}
+.color-absch {color:#069554;text-decoration:none ;}
+.row-absch a:visited {color: #069554;}
+.row-absch a:hover {color:initial;}
+.row-absch a:active {color:#069554}
 .row-absch .row-chm-links  {padding-left:0;margin-left:0;}
 .row-absch .row-chm-logo {padding-left: 0;}
 .row-absch .row-chm-logo {height: 80px;}
@@ -30,7 +36,10 @@ body {
 
 .row-bch {padding:20px 0 0 0; margin:0; height:140px;vertical-align: middle;}
 .row-bch h1 {font-size:21px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
-.row-bch .color-bch {color:#428bca;text-decoration:none ;}
+.color-bch {color:#428bca;text-decoration:none ;}
+.row-bch a:visited {color: #428bca;}
+.row-bch a:hover {color:initial;}
+.row-bch a:active {color:#428bca}
 .row-bch .row-chm-links  {padding-left:0;margin-left:0;}
 .row-bch .row-chm-logo {padding-left: 0;}
 .row-bch .row-chm-logo {height: 80px;}
@@ -42,15 +51,29 @@ body {
 
 
 
-.navbar-breadcrumbs {min-height: 0;margin: 0;border-bottom: 1px solid #eee; }
+.navbar-breadcrumbs {position:relative; top:1px;min-height: 0;margin: 0;border-bottom: 1px solid #f2f2f2; }
 .navbar-breadcrumbs a {font-size: 12px;}
 .navbar-breadcrumbs .breadcrumb{background: #FFF; padding: 0; margin: 0;}
-.chm-content {margin-top:30px;margin-bottom:30px;min-height: 600px;}
 
-footer{border-top:1px solid #ddd;padding-top:30px;background-color: #EEE;}
+
+
+.chm-content {margin-bottom:30px;}
+.chm-content .content-full-1 {background-color: #f2f2f2;padding-top:20px;padding-bottom:40px;}
+.chm-content .content-inner-1 {padding-top:20px;padding-bottom:20px; background-color: #fff;}
+.chm-content .content-full-2 {padding-top:20px;padding-bottom:40px}
+.chm-content .content-inner-2 {padding-top:20px;padding-bottom:20px; background-color: #f2f2f2;}
+.chm-content .content-full-3 {padding-top:20px;padding-bottom:40px;}
+.chm-content .content-inner-3 {padding-top:20px;padding-bottom:20px; background-color: #fff;}
+.chm-content .content-col {padding:15px 10px;margin:0;}
+.chm-content .container-padding {margin-bottom:40px;}
+
+
+
+
+
+footer{border-top:1px solid #ddd;padding-top:30px;background-color: #f2f2f2;}
 footer a{color:#777;}
 
-.temp {background-color: #ddd;}
+.temp {background-color: #f2f2f2;}
 
-/* bootstrap */
-.btn {background-image: none;}
+
