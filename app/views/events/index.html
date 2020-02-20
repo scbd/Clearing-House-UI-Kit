@@ -1,0 +1,63 @@
+<div class="container" ng-controller="EventsController">
+
+    <div class="row-fluid events">
+        <div class="col-xs-12" style="padding:0;margin:0;">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li ng-class="{'active':currentTab==='upcomingMeetings'}" class='blue-box'><a translation-url href="#" ng-click="updateCurrentTab('upcomingMeetings')">Upcoming Meetings <span class="badge bg-blue" style="margin-left:10px;">{{nextMeetingCounts}}</span></a></li>
+                <li ng-class="{'active':currentTab==='previousMeetings'}" class='dark-green-box'><a translation-url href="#" ng-click="updateCurrentTab('previousMeetings')">Previous Meetings <span class=" badge bg-orange" style="margin-left:10px;">{{previousMeetingCounts}}</span></a></li>
+            </ul>
+        </div>
+        <!-- Tab panes -->
+        <div class="col-xs-12 tab-content bg-white" style="padding:20px;margin:0;">
+            <div class="tab-pane bg-white" ng-class="{'active':currentTab==='upcomingMeetings'}" ng-if="currentTab==='upcomingMeetings'">
+                <div ng-repeat="meeting in nextMeetings">
+                    <div class='row'>
+                        <div class="col-md-2 col-lg-2 hidden-sm hidden-xs  nopadding date-placeholder blue-box">
+                            <h4>{{meeting.days}}</h4>
+                            <p>{{meeting.month}}<br />{{meeting.year}}</p>
+                        </div>
+                        <div class="col-sm-12 col-md-9 col-lg-10  textbox nopadding">
+                            <h3 class='visible-sm-down'>{{meeting.days}}, {{meeting.month}} {{meeting.year}}</h3>
+                            <a href="{{meeting.url}}">
+                                <h3 class="blue">{{meeting.name}}</h3>
+                            </a>
+                            <div class="push20"></div>
+                            <img src="app/images/icon-where.png" alt="marker">
+                            <p><span class="important">{{meeting.city}}</span>, {{meeting.country}}</p>
+                            <a href="{{meeting.url}}" class="arrow-more_blue">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="bg-white" ng-if="nextMeetingCounts === 0"><br>There are currently no upcoming meetings available.</h3>
+                <div class="clear push15"></div>
+            </div>
+
+            <div class="tab-pane bg-white" ng-class="{'active':currentTab==='previousMeetings'}" ng-if="currentTab==='previousMeetings'">
+                <div ng-repeat="meeting in previousMeetings">
+                    <div class='row'>
+                        <div class="col-md-2 col-lg-2 hidden-sm hidden-xs nopadding date-placeholder dark-green-box">
+                            <h4>{{meeting.days}}</h4>
+                            <p>{{meeting.month}}<br />{{meeting.year}}</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 textbox nopadding">
+                            <h3 class='visible-sm visible-xs'>{{meeting.days}}, {{meeting.month}} {{meeting.year}}</h3>
+                            <a href="{{meeting.url}}">
+                                <h3 class="dark-green">{{meeting.name}}</h3>
+                            </a>
+                            <div class="push20"></div>
+                            <img src="app/images/icon-where.png" alt="marker">
+                            <p><span class="important">{{meeting.city}}</span>, {{meeting.country}}</p>
+                            <a href="{{meeting.url}}" class="arrow-more_dark-green">&nbsp;</a>
+                        </div>
+                    </div>
+
+                    <div class="clear push15"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="push50 clear">&nbsp;</div>
+        <div class="clear push50"></div>
+    </div>
+</div>
