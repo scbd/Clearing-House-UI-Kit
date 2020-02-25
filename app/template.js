@@ -57,29 +57,15 @@ define(['app', 'authentication'], function(app) { 'use strict';
         //============================================================
 
         var siteMap = {
-            '/': {                                                name: 'Home',
+            '/': {name: 'Home',
                 pages: {
-                    '/about': {                                   name: 'About',
-                        pages: {
-                            '/about/approach':                  { name: 'Approach' },
-                            '/about/history':                   { name: 'History' },
-                            '/about/strategic-plan':            { name: 'Strategic Plan' }
-                        }
-                    },
-                    '/events':                                  { name: 'Events' },
-                    '/training':                                { name: 'Training' },
-                    '/resources': {                               name: 'Resources',
-                        pages: {
-                            '/resources/brochures':             { name: 'Brochures' },
-                            '/resources/cbd-materials':         { name: 'SOI/CBD Materials' },
-                            '/resources/relevant-resources':    { name: 'Other Relevant Resources' },
-                            '/resources/background-materials':  { name: 'Background Materials' },
-                            '/resources/unoc-interviews':       { name: 'UNOC Interviews' }
-                        }
-                    },
-                    '/experiences':                             { name: 'Experiences' },
-                    '/partners':                                { name: 'Partners' },
-                    '/aligned-initiatives':                     { name: 'Aligned Initiatives' },
+                    '/about': { name: 'About'},
+                    '/search': { name: 'Search' },
+                    '/explore': { name: 'Explore' },
+                    '/submit': { name: 'Submit'},
+                    '/countries': { name: 'Country profiles' },
+                    '/reports':{ name: 'National reports' },
+                    '/forums':{ name: 'Forums' },
                     '/help': {                                    name: 'Help',
                         pages: {
                             '/help/403':                        { name: '403' },

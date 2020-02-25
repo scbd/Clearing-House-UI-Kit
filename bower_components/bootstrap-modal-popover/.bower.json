@@ -1,0 +1,13 @@
+{
+  "name": "bootstrap-modal-popover",
+  "_cacheHeaders": {
+    "ETag": "W/\"37e3db002d2dd5839047595c25281127\"",
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "_release": "e-tag:W/\"37e3db0",
+  "main": "index.js",
+  "_source": "https://github.com/scruffles/BootstrapModalPopover/blob/master/src/bootstrap-modal-popover.js",
+  "_target": "*",
+  "_originalSource": "https://github.com/scruffles/BootstrapModalPopover/blob/master/src/bootstrap-modal-popover.js",
+  "_direct": true
+}

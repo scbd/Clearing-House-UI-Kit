@@ -22,7 +22,7 @@
     <link href="app/css/default.css" rel="stylesheet">
     <link href="app/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="app/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.css" rel="stylesheet">
-
+    
     <style>[ng\:cloak], [ng-cloak], .ng-cloak { display: none !important; }</style>
 </head>
 
@@ -33,10 +33,13 @@
             <div class="container-fluid">
                 <div class="navbar-header" >
                     <a href="#" ng-click="toggleMenu = !toggleMenu" >
-                        <span class="hidden-xs hidden-sm"> <img src="/app/img/cbd-leaf-999.svg" style="position: relative;top:-2px; padding:0 3px;" /> 
-                            Convention on Biological Diversity </span> </a>
-                        <a href="http://www.cbd.int" class="hidden-md hidden-lg"> <img src="/app/img/cbd-leaf-999.svg" style="position: relative;top:-2px;" />
-                            CBD </span></a>
+                        <span class="hidden-xs hidden-sm"> <img src="/app/img/cbd-leaf-999.svg" style="position: relative;top:-2px; padding:0 3px;" /> Convention on Biological Diversity </span> 
+                    </a>
+                    <a href="http://www.cbd.int" class="hidden-md hidden-lg"> <img src="/app/img/cbd-leaf-999.svg" style="position: relative;top:-2px; padding:0 3px;" /> CBD </span></a>
+                    <a href="./" class="color-absch" > <span class="hidden-sm hidden-md hidden-lg"> >  ABSCH </span> </a>
+                    <div class="hide visible-xs text-center">
+                        <a href="about"> About</a> | <a href="search">Search</a> | <a href="explore">Explore</a> | <a href="submit">Submit</a> | <a href="countries">Countries</a> | <a href="reports">National Reports</a> | <a href="forums">Forums</a>
+                    </div>
                 </div>
                 <ul class="navbar-left navlist" ng-if="toggleMenu"  ng-class="{'arabic-cbd-nav-bar' : locale=='ar'}" ng-if="toggleMenu" >
                     <li><a translation-url  href="http://www.cbd.int/convention/" class="color-cbdgrey">Biodiversity Convention</a></li>
@@ -48,38 +51,84 @@
                 </ul>
             </div>
         </nav>
-   
-     
 
         <!-- ABSCH header -->
-        <div class="container" style="padding:0;">
+        <div class="container hidden-xs" style="padding:0;">
             <div class="row row-absch" >
+                
+                <ul class="hide visible-xs nav nav-pills nav-search-options nav-stacked-compressed">
+                    <li> <a href="about" class="small font-weight-light text-uppercase">About</a> </li>
+                    <li> <a href="Search" class="small font-weight-light text-uppercase">Search</a> </li>
+                    <li> <a href="Explore" class="small font-weight-light text-uppercase">Explore</a> </li>
+                    <li> <a href="Submit" class="small font-weight-light text-uppercase">Submit</a> </li>
+                    <li> <a href="Countries" class="small font-weight-light text-uppercase">Countries</a> </li>
+                    <li> <a href="National Reports" class="small font-weight-light text-uppercase">National Reports</a> </li>
+                    <li> <a href="Forums" class="small font-weight-light text-uppercase">Forums</a> </li>
+                </ul>
+                
+              
                 <div style="margin-top:20px">
-                    <div class="col-xs-5 row-chm-logo" >
+                    <div class="col-xs-12  col-sm-2  col-md-4  col-lg-5 row-chm-logo" >
                         <h1>
                             <a href="./" class="color-absch" >
                                 <span><img src="/app/images/green-outline-cbd-leaf.png" /></span>
                                 <span class="hidden-xs hidden-sm hidden-md" > The Access and Benefit-sharing Clearing-House </span>
-                                <span class="hidden-xs hidden-lg "> ABS Clearing-House </span>
-                                <span class="hidden-sm hidden-md hidden-lg"> ABS-CH</span>
+                                <span class="hidden-xs hidden-sm hidden-lg "> ABS Clearing-House </span>
+                                <span class="hidden-xs hidden-md hidden-lg"> ABSCH</span>
                             </a>
                         </h1>
                     </div>
-                    <div class="col-xs-7 row-chm-links">
-                        <ul class="nav navbar-nav">
+                    <div class="col-xs-12 col-sm-10  col-md-8  col-lg-7 row-chm-links">
+                        <ul class="nav navbar-nav nav-pills">
                             <li><a href="about">About</a></li>
-                            <li><a href="events">Search</a></li>
-                            <li><a href="training">Explore</a></li>
-                            <li><a href="resources">Submit</a></li>
-                            <li><a href="experiences">Countries</a></li>
-                            <li><a href="partners">National Reports</a></li>
-                            <li><a href="partners">Forums</a></li>
+                            <li><a href="search">Search</a></li>
+                            <li><a href="explore">Explore</a></li>
+                            <li><a href="submit">Submit</a></li>
+                            <li><a href="countries">Countries</a></li>
+                            <li><a href="reports">National Reports</a></li>
+                            <li><a href="forums">Forums</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-             <!--  BREADCRUMB  -->
-             <div class="container" > 
+        </div>
+
+            <!-- BCH header -->
+        <!-- <div class="container hidden-xs" style="padding:0;">
+            <div class="row row-bch" >
+                <div class="hide visible-xs text-center">
+                    <a href="about">About</a> | <a href="search">Search</a> | 
+                    <a href="explore">Explore</a> | <a href="submit">Submit</a> | 
+                    <a href="countries">Countries</a> | <a href="reports">National Reports</a> | <a href="forums">Forums</a>
+                 </div>
+                <div style="margin-top:20px">
+                    <div class="col-xs-12  col-sm-2  col-md-4  col-lg-5 row-chm-logo" >
+                        <h1>
+                            <a href="./" class="color-bch" >
+                                <span><img src="/app/images/green-outline-cbd-leaf.png" /></span>
+                                <span class="hidden-xs hidden-sm hidden-md" > The Biosafety Clearing-House </span>
+                                <span class="hidden-xs hidden-sm hidden-lg "> Biosafety Clearing-House </span>
+                                <span class="hidden-xs hidden-md hidden-lg"> BCH</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-10  col-md-8  col-lg-7 row-chm-links">
+                        <ul class="nav navbar-nav nav-pills">
+                            <li><a href="about">About</a></li>
+                            <li><a href="search">Search</a></li>
+                            <li><a href="explore">Explore</a></li>
+                            <li><a href="submit">Submit</a></li>
+                            <li><a href="countries">Countries</a></li>
+                            <li><a href="reports">National Reports</a></li>
+                            <li><a href="forums">Forums</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div> -->
+
+            <!--  BREADCRUMB  -->
+            <div class="container" > 
                 <nav class="navbar navbar-breadcrumbs navbar-static-top" ng-cloak ng-if="$root.breadcrumb.length>1">
                         <ol class="breadcrumb">
                             <li ng-repeat="item in $root.breadcrumb">
@@ -89,60 +138,14 @@
                         </ol>
                 </nav>
             </div>
-        </div> 
+         </div> 
 
 
-
-            <!-- BCH header -->
-            <div class="container" style="padding:0;">
-                <div class="row row-bch" >
-                    <div style="margin-top:20px">
-                        <div class="col-xs-5 row-chm-logo" >
-                            <h1>
-                                <a href="./" class="color-bch" >
-                                    <span><img src="/app/images/blue-outline-cbd-leaf.png" /></span>
-                                    <span class="hidden-xs hidden-sm hidden-md" > The Biosafety Clearing-House </span>
-                                    <span class="hidden-xs hidden-lg "> Biosafety Clearing-House </span>
-                                    <span class="hidden-sm hidden-md hidden-lg"> BCH </span>
-                                </a>
-                            </h1>
-                        </div>
-                        <div class="col-xs-7 row-chm-links">
-                            <ul class="nav navbar-nav">
-                                <li><a href="about">About</a></li>
-                                <li><a href="events">Search</a></li>
-                                <li><a href="training">Explore</a></li>
-                                <li><a href="resources">Submit</a></li>
-                                <li><a href="experiences">Countries</a></li>
-                                <li><a href="partners">National Reports</a></li>
-                                <li><a href="partners">Forums</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                 <!--  BREADCRUMB  -->
-                 <div class="container" > 
-                    <nav class="navbar navbar-breadcrumbs navbar-static-top" ng-cloak ng-if="$root.breadcrumb.length>1">
-                            <ol class="breadcrumb">
-                                <li ng-repeat="item in $root.breadcrumb">
-                                    <a ng-if="!$last" href=".{{item.url}}">{{item.name}}</a>
-                                    <a ng-if="$last" class="active">{{item.name}}</a>
-                                </li>
-                            </ol>
-                    </nav>
-                </div>
-            </div>
-
-
-
- 
         <!--  CONTENT  -->
         <div class="chm-content">
             <ng-view></ng-view>
         </div>
  
-
-
 
     <!--  FOOTER  -->
     <footer ng-cloak ng-show="routeLoaded" >

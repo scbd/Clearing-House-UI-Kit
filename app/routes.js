@@ -6,14 +6,14 @@ define(['app', 'lodash', 'text!views/index.html?', 'views/index', 'providers/ext
         $locationProvider.hashPrefix('!');
 
         $routeProvider.
-            when('/',         { template:    rootTemplate,                       resolveController: 'views/index',       resolveUser: false }).
-            when('/about',    { templateUrl: 'views/about/index.html',           resolveController: false }).
-            when('/search',   { templateUrl: 'views/events/index.html',          resolveController: true }).
-            when('/explore',  { templateUrl: 'views/training/index.html',        resolveController: true }).
-            when('/submit',   { templateUrl: 'views/experiences/index.html',         resolveController: false }).
-            when('/countries',{ templateUrl: 'views/partners/index.html',            resolveController: false }).
-            when('/reports',  { templateUrl: 'views/aligned-initiatives/index.html', resolveController: true  }).
-            when('/forums',   { templateUrl: 'views/aligned-initiatives/index.html', resolveController: true  }).
+            when('/',         { template:    rootTemplate,                          resolveController: 'views/index',       resolveUser: false }).
+            when('/about',    { templateUrl: 'views/about/index.html',              resolveController: false }).
+            when('/search',   { templateUrl: 'views/search/index.html',             resolveController: false }).
+            when('/explore',  { templateUrl: 'views/explore/index.html',            resolveController: false }).
+            when('/submit',   { templateUrl: 'views/submit/index.html',             resolveController: false }).
+            when('/countries',{ templateUrl: 'views/countries/index.html',          resolveController: false }).
+            when('/reports',  { templateUrl: 'views/reports/index.html',            resolveController: false  }).
+            when('/forums',   { templateUrl: 'views/forums/index.html',             resolveController: false  }).
             when('/help/404', { templateUrl: 'views/404.html',  label : 'Not found',  controller: [function(){}], resolveUser: false }).
             when('/help/403', { templateUrl: 'views/403.html',  label : 'Forbidden',  controller: [function(){}], resolveUser: false }).
             otherwise({ redirectTo: '/help/404' });
