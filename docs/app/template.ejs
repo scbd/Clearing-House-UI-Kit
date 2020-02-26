@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="<%=baseUrl%>">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ABSCH Clearing-House</title>
+
+    <meta name="description" content="Ecologically or Biologically Significant Marine Areas">
+    <meta name="author" content="Secretariat of the Convention on Biological Diversity">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle|Roboto+Condensed&display=swap" rel="stylesheet">
+
+
+    <script src="app/libs/requirejs/require.js" data-main="app/boot.js"></script>
+    <link href="app/css/reset.css" rel="stylesheet">
+    <link href="app/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="app/libs/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="app/css/default.css" rel="stylesheet">
+    <link href="app/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="app/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.css" rel="stylesheet">
+    
+    <style>[ng\:cloak], [ng-cloak], .ng-cloak { display: none !important; }</style>
+</head>
+
+<body ng-controller="TemplateController">
+    
+    
+        <nav class="navbar-cbd navbar navbar-default navbar-static-top" id="anchorTop">
+            <div class="container-fluid">
+                <div class="navbar-header" >
+                    <a href="#" ng-click="toggleMenu = !toggleMenu" >
+                        <span class="hidden-xs hidden-sm"> <img src="/app/img/cbd-leaf-999.svg" style="position: relative;top:-2px; padding:0 3px;" /> Convention on Biological Diversity </span> 
+                    </a>
+                    <a href="http://www.cbd.int" class="hidden-md hidden-lg"> <img src="/app/img/cbd-leaf-999.svg" style="position: relative;top:-2px; padding:0 3px;" /> CBD </span></a>
+                    <a href="./" class="color-absch" > <span class="hidden-sm hidden-md hidden-lg"> >  ABSCH </span> </a>
+                    <div class="hide visible-xs text-center">
+                        <a href="about"> About</a> | <a href="search">Search</a> | <a href="explore">Explore</a> | <a href="submit">Submit</a> | <a href="countries">Countries</a> | <a href="reports">National Reports</a> | <a href="forums">Forums</a>
+                    </div>
+                </div>
+                <ul class="navbar-left navlist" ng-if="toggleMenu"  ng-class="{'arabic-cbd-nav-bar' : locale=='ar'}" ng-if="toggleMenu" >
+                    <li><a translation-url  href="http://www.cbd.int/convention/" class="color-cbdgrey">Biodiversity Convention</a></li>
+                    <li><a translation-url  href="http://bch.cbd.int/protocol" class="color-cbdgrey">Cartagena Protocol</a></li>
+                    <li><a translation-url  href="http://www.cbd.int/abs/" class="color-cbdgrey">Nagoya Protocol</a></li>
+                    <li><a translation-url  href="http://www.cbd.int/programmes/" class="color-cbdgrey">Programmes</a></li>
+                    <li><a translation-url  href="http://www.cbd.int/information/" class="color-cbdgrey">Information</a></li>
+                    <li><a translation-url  href="http://www.cbd.int/secretariat/" class="color-cbdgrey">Secretariat</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- ABSCH header -->
+        <div class="container hidden-xs" style="padding:0;">
+            <div class="row row-absch" >
+                
+                <ul class="hide visible-xs nav nav-pills nav-search-options nav-stacked-compressed">
+                    <li> <a href="about" class="small font-weight-light text-uppercase">About</a> </li>
+                    <li> <a href="Search" class="small font-weight-light text-uppercase">Search</a> </li>
+                    <li> <a href="Explore" class="small font-weight-light text-uppercase">Explore</a> </li>
+                    <li> <a href="Submit" class="small font-weight-light text-uppercase">Submit</a> </li>
+                    <li> <a href="Countries" class="small font-weight-light text-uppercase">Countries</a> </li>
+                    <li> <a href="National Reports" class="small font-weight-light text-uppercase">National Reports</a> </li>
+                    <li> <a href="Forums" class="small font-weight-light text-uppercase">Forums</a> </li>
+                </ul>
+                
+              
+                <div style="margin-top:20px">
+                    <div class="col-xs-12  col-sm-2  col-md-4  col-lg-5 row-chm-logo" >
+                        <h1>
+                            <a href="./" class="color-absch" >
+                                <span><img src="/app/images/green-outline-cbd-leaf.png" /></span>
+                                <span class="hidden-xs hidden-sm hidden-md" > The Access and Benefit-sharing Clearing-House </span>
+                                <span class="hidden-xs hidden-sm hidden-lg "> ABS Clearing-House </span>
+                                <span class="hidden-xs hidden-md hidden-lg"> ABSCH</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-10  col-md-8  col-lg-7 row-chm-links">
+                        <ul class="nav navbar-nav nav-pills">
+                            <li><a href="about">About</a></li>
+                            <li><a href="search">Search</a></li>
+                            <li><a href="explore">Explore</a></li>
+                            <li><a href="submit">Submit</a></li>
+                            <li><a href="countries">Countries</a></li>
+                            <li><a href="reports">National Reports</a></li>
+                            <li><a href="forums">Forums</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- BCH header -->
+        <!-- <div class="container hidden-xs" style="padding:0;">
+            <div class="row row-bch" >
+                <div class="hide visible-xs text-center">
+                    <a href="about">About</a> | <a href="search">Search</a> | 
+                    <a href="explore">Explore</a> | <a href="submit">Submit</a> | 
+                    <a href="countries">Countries</a> | <a href="reports">National Reports</a> | <a href="forums">Forums</a>
+                 </div>
+                <div style="margin-top:20px">
+                    <div class="col-xs-12  col-sm-2  col-md-4  col-lg-5 row-chm-logo" >
+                        <h1>
+                            <a href="./" class="color-bch" >
+                                <span><img src="/app/images/green-outline-cbd-leaf.png" /></span>
+                                <span class="hidden-xs hidden-sm hidden-md" > The Biosafety Clearing-House </span>
+                                <span class="hidden-xs hidden-sm hidden-lg "> Biosafety Clearing-House </span>
+                                <span class="hidden-xs hidden-md hidden-lg"> BCH</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-10  col-md-8  col-lg-7 row-chm-links">
+                        <ul class="nav navbar-nav nav-pills">
+                            <li><a href="about">About</a></li>
+                            <li><a href="search">Search</a></li>
+                            <li><a href="explore">Explore</a></li>
+                            <li><a href="submit">Submit</a></li>
+                            <li><a href="countries">Countries</a></li>
+                            <li><a href="reports">National Reports</a></li>
+                            <li><a href="forums">Forums</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div> -->
+
+            <!--  BREADCRUMB  -->
+            <div class="container" > 
+                <nav class="navbar navbar-breadcrumbs navbar-static-top" ng-cloak ng-if="$root.breadcrumb.length>1">
+                        <ol class="breadcrumb">
+                            <li ng-repeat="item in $root.breadcrumb">
+                                <a ng-if="!$last" href=".{{item.url}}">{{item.name}}</a>
+                                <a ng-if="$last" class="active">{{item.name}}</a>
+                            </li>
+                        </ol>
+                </nav>
+            </div>
+         </div> 
+
+
+        <!--  CONTENT  -->
+        <div class="chm-content">
+            <ng-view></ng-view>
+        </div>
+ 
+
+    <!--  FOOTER  -->
+    <footer ng-cloak ng-show="routeLoaded" >
+        
+        <div class="container-fluid footer-page-container hidden-print text-right hidden-xs">
+            <a translation-url href="#" scroll-to="anchorTop" class="color-darkgrey"><i class="fa fa-arrow-circle-up"></i> back to top</a>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center" >
+                    <div class="jumbotron" style="background-color:#FFF;">
+                        <h1>Need help? </h1>
+                        <p>Get in touch with us at: <a class="color-absch" href="mailto:absch@cbd.int" role="button">absch@cbd.int</a> </p>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row  hidden-xs">
+                <div class="row">
+                    <div class="col-xs-12" >
+                        <h2>THE CONVENTION ON BIOLOGICAL DIVERSITY </h2>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <h4>The Convention</h4>
+                    <ul>
+                        <li><a translation-url href="https://www.cbd.int/convention/text/">Text of the Convention</a></li>
+                        <li><a translation-url href="https://www.cbd.int/convention/parties/list/">List of Parties</a></li>
+                        <li><a translation-url href="https://www.cbd.int/sp/">Strategic Plan</a></li>
+                        <li><a translation-url href="https://www.cbd.int/programmes/">Programmes and Issues</a></li>
+                        <li><a translation-url href="https://www.cbd.int/cooperation/">Cooperation &amp; Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <h4>Cartagena Protocol</h4>
+                    <ul>
+                        <li><a translation-url href="https://bch.cbd.int/protocol/text/">Text of the Protocol</a></li>
+                        <li><a translation-url href="https://bch.cbd.int/protocol/parties/">List of Parties</a></li>
+                        <li><a translation-url href="https://bch.cbd.int/protocol/issues/cpb_stplan.shtml">Strategic Plan</a></li>
+                        <li><a translation-url href="https://bch.cbd.int/">Biosafety Clearing-House</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <h4>Nagoya Protocol</h4>
+                    <ul>
+                        <li><a translation-url href="https://www.cbd.int/abs/text/">Text of the Protocol</a></li>
+                        <li><a translation-url href="https://www.cbd.int/abs/nagoya-protocol/signatories/">List of Parties</a></li>
+                        <li><a translation-url href="https://absch.cbd.int/">ABS Clearing-House</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <h4>Programmes</h4>
+                    <ul>
+                        <li><a translation-url href="https://www.cbd.int/programmes/">Thematic Programmes</a></li>
+                        <li><a translation-url href="https://www.cbd.int/programmes/">Cross-Cutting Issues</a></li>
+                        <li><a translation-url href="https://www.cbd.int/programmes/">Major Groups</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a translation-url href="https://www.cbd.int/meetings/">Meetings</a></li>
+                        <li><a translation-url href="https://www.cbd.int/notifications/">Notifications</a></li>
+                        <li><a translation-url href="https://www.cbd.int/countries/">National Information</a></li>
+                        <li><a translation-url href="https://www.cbd.int/information/publications.shtml">Publications</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <h4>Secretariat</h4>
+                    <ul>
+                        <li><a translation-url href="https://www.cbd.int/secretariat/">Overview</a></li>
+                        <li><a translation-url href="https://www.cbd.int/secretariat/staff/">Staff</a></li>
+                        <li><a translation-url href="https://www.cbd.int/secretariat/vacancies/">Opportunities</a></li>
+                        <li><a translation-url href="https://www.cbd.int/contact/">Contact Us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+ 
+    <div class="row copyright">
+        <div class="col-xs-12 text-center">
+            <a translation-url="" href="http://www.cbd.int"><img src="/app/img/cbd-logo-en.svg" style="padding: 0 0 14px 0; margin: 0; width:200px;"></a>
+            <p style="font-size:10px;"><a translation-url="" href="http://www.cbd.int" class="ng-binding">© 2020 SCBD</a> | <a translation-url="" href="http://www.cbd.int/privacy">Privacy Policy</a> | <a translation-url="" href="http://www.cbd.int/terms">Terms of Use</a></p>
+        </div>
+    </div>
+
+
+ 
+
+    </footer>
+
+
+  </body>
+</html>
