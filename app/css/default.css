@@ -82,6 +82,7 @@ footer a{color:#777;}
 .nav-searchfilters .btn-filter1{text-align: left; border-radius: 4px; width:100%; background-color:#eee;margin-top: -5px;  z-index: 1; }
 .nav-searchfilters .btn-filter2{text-align: left; border-radius: 4px; width:100%; background-color:#ddd;margin-top: -5px;  z-index: 0; }
 .nav-searchfilters i.align {position:  relative; top:3px;}
+.nav-pills li > a > i {position: relative; top:2px;}
 .badge, .align {position: relative; top:-1px;}
 
 .nav-searchfilters .form-control , .input-group-btn {height: 44px; font-size: 18px;}
