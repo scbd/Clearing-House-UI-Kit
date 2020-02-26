@@ -1,260 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="<%=baseUrl%>">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<div class="container-full map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15990.722728751345!2d-73.56415999999999!3d45.5052525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sca!4v1582228313982!5m2!1sen!2sca" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-</div>
+    <title>ABSCH Clearing-House</title>
+
+    <meta name="description" content="Ecologically or Biologically Significant Marine Areas">
+    <meta name="author" content="Secretariat of the Convention on Biological Diversity">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle|Roboto+Condensed&display=swap" rel="stylesheet">
 
 
+    <script src="app/libs/requirejs/require.js" data-main="app/boot.js"></script>
+    <link href="app/css/reset.css" rel="stylesheet">
+    <link href="app/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="app/libs/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="app/css/default.css" rel="stylesheet">
+    <link href="app/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="app/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.css" rel="stylesheet">
+    
+    <style>[ng\:cloak], [ng-cloak], .ng-cloak { display: none !important; }</style>
+</head>
+
+<body ng-controller="TemplateController">
+    
+    
+        <nav class="navbar-cbd navbar navbar-default navbar-static-top" id="anchorTop">
+            <div class="container-fluid">
+                <div class="navbar-header" >
+                    <a href="#" ng-click="toggleMenu = !toggleMenu" >
+                        <span class="hidden-xs hidden-sm"> <img src="/app/img/cbd-leaf-999.svg" style="position: relative;top:-2px; padding:0 3px;" /> Convention on Biological Diversity </span> 
+                    </a>
+                    <a href="http://www.cbd.int" class="hidden-md hidden-lg"> <img src="/app/img/cbd-leaf-999.svg" style="position: relative;top:-2px; padding:0 3px;" /> CBD </span></a>
+                    <a href="./" class="color-absch" > <span class="hidden-sm hidden-md hidden-lg"> >  ABSCH </span> </a>
+                    <div class="hide visible-xs text-center">
+                        <a href="about"> About</a> | <a href="search">Search</a> | <a href="explore">Explore</a> | <a href="submit">Submit</a> | <a href="countries">Countries</a> | <a href="reports">National Reports</a> | <a href="forums">Forums</a>
+                    </div>
+                </div>
+                <ul class="navbar-left navlist" ng-if="toggleMenu"  ng-class="{'arabic-cbd-nav-bar' : locale=='ar'}" ng-if="toggleMenu" >
+                    <li><a translation-url  href="http://www.cbd.int/convention/" class="color-cbdgrey">Biodiversity Convention</a></li>
+                    <li><a translation-url  href="http://bch.cbd.int/protocol" class="color-cbdgrey">Cartagena Protocol</a></li>
+                    <li><a translation-url  href="http://www.cbd.int/abs/" class="color-cbdgrey">Nagoya Protocol</a></li>
+                    <li><a translation-url  href="http://www.cbd.int/programmes/" class="color-cbdgrey">Programmes</a></li>
+                    <li><a translation-url  href="http://www.cbd.int/information/" class="color-cbdgrey">Information</a></li>
+                    <li><a translation-url  href="http://www.cbd.int/secretariat/" class="color-cbdgrey">Secretariat</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- ABSCH header -->
+        <div class="container hidden-xs" style="padding:0;">
+            <div class="row row-absch" >
+                
+                <ul class="hide visible-xs nav nav-pills nav-search-options nav-stacked-compressed">
+                    <li> <a href="about" class="small font-weight-light text-uppercase">About</a> </li>
+                    <li> <a href="Search" class="small font-weight-light text-uppercase">Search</a> </li>
+                    <li> <a href="Explore" class="small font-weight-light text-uppercase">Explore</a> </li>
+                    <li> <a href="Submit" class="small font-weight-light text-uppercase">Submit</a> </li>
+                    <li> <a href="Countries" class="small font-weight-light text-uppercase">Countries</a> </li>
+                    <li> <a href="National Reports" class="small font-weight-light text-uppercase">National Reports</a> </li>
+                    <li> <a href="Forums" class="small font-weight-light text-uppercase">Forums</a> </li>
+                </ul>
+                
+              
+                <div style="margin-top:20px">
+                    <div class="col-xs-12  col-sm-2  col-md-4  col-lg-5 row-chm-logo" >
+                        <h1>
+                            <a href="./" class="color-absch" >
+                                <span><img src="/app/images/green-outline-cbd-leaf.png" /></span>
+                                <span class="hidden-xs hidden-sm hidden-md" > The Access and Benefit-sharing Clearing-House </span>
+                                <span class="hidden-xs hidden-sm hidden-lg "> ABS Clearing-House </span>
+                                <span class="hidden-xs hidden-md hidden-lg"> ABSCH</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-10  col-md-8  col-lg-7 row-chm-links">
+                        <ul class="nav navbar-nav nav-pills">
+                            <li><a href="about">About</a></li>
+                            <li><a href="search">Search</a></li>
+                            <li><a href="explore">Explore</a></li>
+                            <li><a href="submit">Submit</a></li>
+                            <li><a href="countries">Countries</a></li>
+                            <li><a href="reports">National Reports</a></li>
+                            <li><a href="forums">Forums</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- BCH header -->
+        <!-- <div class="container hidden-xs" style="padding:0;">
+            <div class="row row-bch" >
+                <div class="hide visible-xs text-center">
+                    <a href="about">About</a> | <a href="search">Search</a> | 
+                    <a href="explore">Explore</a> | <a href="submit">Submit</a> | 
+                    <a href="countries">Countries</a> | <a href="reports">National Reports</a> | <a href="forums">Forums</a>
+                 </div>
+                <div style="margin-top:20px">
+                    <div class="col-xs-12  col-sm-2  col-md-4  col-lg-5 row-chm-logo" >
+                        <h1>
+                            <a href="./" class="color-bch" >
+                                <span><img src="/app/images/green-outline-cbd-leaf.png" /></span>
+                                <span class="hidden-xs hidden-sm hidden-md" > The Biosafety Clearing-House </span>
+                                <span class="hidden-xs hidden-sm hidden-lg "> Biosafety Clearing-House </span>
+                                <span class="hidden-xs hidden-md hidden-lg"> BCH</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-10  col-md-8  col-lg-7 row-chm-links">
+                        <ul class="nav navbar-nav nav-pills">
+                            <li><a href="about">About</a></li>
+                            <li><a href="search">Search</a></li>
+                            <li><a href="explore">Explore</a></li>
+                            <li><a href="submit">Submit</a></li>
+                            <li><a href="countries">Countries</a></li>
+                            <li><a href="reports">National Reports</a></li>
+                            <li><a href="forums">Forums</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div> -->
+
+            <!--  BREADCRUMB  -->
+            <div class="container" > 
+                <nav class="navbar navbar-breadcrumbs navbar-static-top" ng-cloak ng-if="$root.breadcrumb.length>1">
+                        <ol class="breadcrumb">
+                            <li ng-repeat="item in $root.breadcrumb">
+                                <a ng-if="!$last" href=".{{item.url}}">{{item.name}}</a>
+                                <a ng-if="$last" class="active">{{item.name}}</a>
+                            </li>
+                        </ol>
+                </nav>
+            </div>
+         </div> 
 
 
+        <!--  CONTENT  -->
+        <div class="chm-content">
 
-<div class="container-full content-full-1" >
-    <div class="container"><h1>Content option 1</h1></div>
-    <div class="container content-inner-1">
 
-        <h1>h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h1>
-        <h2>h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h2>
-        <h3>h3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
-        <h4>h4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
-        <h5>h5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h5>
-        
-        <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-    </div>
-   
-</div>
-
-<div class="container-full content-full-2" >
-    <div class="container"><h1>Content option 2</h1></div>
-    <div class="container content-inner-2">
-
-        <h1>h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h1>
-        <h2>h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h2>
-        <h3>h3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
-        <h4>h4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
-        <h5>h5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h5>
-        
-        <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-    </div>
-   
-</div>
 
 
 <div class="container-full content-full-3" >
-    <div class="container"><h1>Content option 3</h1></div>
-    <div class="container content-inner-3">
-
-        <h1>h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h1>
-        <h2>h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h2>
-        <h3>h3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
-        <h4>h4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
-        <h5>h5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h5>
-        
-        <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-    </div>
-   
-</div>
-
-
-<div class="container container-padding">
-    <h1>Contents 4 cols</h1>
-    <div class="row">
-            <div class="col-sm-6 col-md-3 ">
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3 ">
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-    </div>
-</div>
-
-
-<div class="container container-padding">
-    <h1>Contents 3 cols</h1>
-    <div class="row">
-            <div class="col-sm-4">
-                <div class="content-col temp">
-                    <div class="content-col temp">
-                        <h1> Column title </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h2> Column title </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h3> Column title </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h4> Column title </h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="content-col temp">
-                    <div class="content-col temp">
-                        <h1> Column title </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h2> Column title </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h3> Column title </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h4> Column title </h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="content-col temp">
-                    <div class="content-col temp">
-                        <h1> Column title </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h2> Column title </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h3> Column title </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-    
-                    <div class="content-col temp">
-                        <h4> Column title </h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div>
-
-
-<div class="container-full content-full-1" >
-    <div class="container"><h1>Content option 1</h1></div>
-    <div class="container content-inner-1">
+    <div class="container ">
         <div class="row">
-            <div class="col-sm-6 col-md-3 ">
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="col-sm-3"> <h2 class="font-weight-light">Search</h2> </div>
+            <div class="col-sm-9" style="margin-top:34px;">     
+                <div class="pull-right">
+                    <ul class="nav nav-pills nav-search-options nav-stacked-compressed">
+                        <li> <a class="small font-weight-light text-uppercase" template="#view-options" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Search results view options">view</a> </li>
+                        <li> <a class="small font-weight-light text-uppercase" template="#sort-options" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Sort search results">sort</a></li>
+                        <li><a class="small font-weight-light text-uppercase" template="#email-options" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Send search results">send</a></li>
+                        <li> <a class="small font-weight-light text-uppercase">print</a> </li>
+                        <li> <a class="small font-weight-light text-uppercase">export</a> </li>
+                        <li> <a class="small font-weight-light text-uppercase">help</a> </li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3 ">
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3 ">
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3 ">
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
+        </div>
     </div>
 
+    <div class="hide popover-content" id="view-options">
+      <ul class="nav nav-pills nav-stacked nav-stacked-compressed">
+        <li>  <a href="" > <input type="radio"> Default </a></li>
+        <li> <a href=""> <input type="radio"> List </a></li>
+        <li> <a href=""> <input type="radio" > Group by: </a></li>
+        <div style="padding: 0 40px;">
+          <ul class="nav nav-pills nav-stacked nav-stacked-compressed">
+            <li> <a href=""> <input type="checkbox" checked> Government/Country <span class="badge">2</span></a>  </li>
+            <li> <a href="">  <input type="checkbox" checked> Record type <span class="badge">1</span></a> </li>
+            <li> <a href=""> <input type="checkbox"> Year published </a></li>
+          </ul>
+        </div>
+        <li> <a href=""> <input type="radio"> Matrix </a></li>
+      </ul>
     </div>
-   
+
+    <div class="hide popover-content" id="sort-options">
+      <ul class="nav nav-pills nav-stacked nav-stacked-compressed">
+        <li> <a href=""> <input type="checkbox"> Relevance</a> </li>
+        <li> <a href=""> <input type="checkbox" checked> Last updated date <span class="badge align">1</span></a></li>
+        <li> <a href=""> <input type="checkbox"> Record type </a></li>
+        <li> <a href=""> <input type="checkbox"> Government/Country </a></li>
+      </ul>
+    </div>
+
+
+    <div class="hide popover-content" id="email-options">
+      <div class="input-group mb10">
+        <div class="small text-uppercase">Email to</div> 
+        <input type="text" class="form-control" placeholder="" >
+      </div>
+      <div class="input-group mb10">
+        <div class="small text-uppercase">Your email</div> 
+        <input type="text" class="form-control" placeholder="" >
+      </div>
+      <div class="input-group mb10">
+        <div class="small text-uppercase">Message</div> 
+        <input type="text" class="form-control" placeholder="" >
+      </div>
+      <div><a class="btn btn-primary"> Send </a></div>
+    </div>
+
+    <div class="container content-inner-3">
+        <div class="row">
+            <div class="col-sm-3 col-md-4 col-lg-4" > 
+                <span class="text-muted small font-weight-light text-uppercase">filters</span> 
+                <ul class="nav nav-searchfilters flex-column">
+                    <li class="nav-item">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                              <button class="btn btn-search btn-default" type="button"><i class="text-muted glyphicon glyphicon-search"></i></button>
+                            </span>
+                          </div>
+                    </li>
+                    <li class="nav-item">
+                        <a type="button" template="#recordtype-filters" class="hidden-xs  btn btn-filter btn-lg btn-default" data-container="body" data-toggle="popover" data-placement="right" html="true" data-original-title="" title="Record types">
+                          Record types
+                          <i class="pull-right align glyphicon glyphicon glyphicon-menu-right"></i>
+                        </a>
+                        <a type="button" template="#recordtype-filters" class="hidden-sm hidden-md hidden-lg btn btn-filter btn-lg btn-default" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Record types">
+                          Record types
+                          <i class="pull-right align glyphicon glyphicon glyphicon-menu-right"></i>
+                        </a>
+
+                        <div class="hide popover-content" id="recordtype-filters">
+                            <div class="row">
+
+                              <div class="col-sm-4 mb10">
+                              <h4>National Records</h4>
+                              <hr>
+                              <p class="small muted">National records are published by Governments and include national information relevant for the implementation of the Nagoya Protocol as well as information Parties are obliged to provide in accordance with the Protocol.</p>
+                              <ul class="nav nav-pills nav-stacked nav-stacked-compressed">
+                                <li> <a href=""> ABS National Focal Points </a></li>
+                                <li class="active"> <a href="" > Competent National Authorities </a></li>
+                                <li> <a href=""> ABS Procedures </a></li>
+                                <li> <a href=""> Legislative, Administrative or Policy Measures </a></li>
+                                <li> <a href=""> National Model Contractual Clauses </a></li>
+                                <li> <a href=""> Internationally Recognized Certificates of Compliance </a></li>
+                                <li> <a href=""> National Websites or Databases </a></li>
+                                <li> <a href=""> Checkpoints </a></li>
+                                <li> <a href=""> Checkpoint Communiqués </a></li>
+                                <li> <a href=""> National Reports </a></li>
+                              </ul>
+                              </div>
+                              <div class="col-sm-4 mb10">
+                              <h4>Reference Records</h4>
+                              <hr>
+                              <p class="small muted">National records are published by Governments and include national information relevant for the implementation of the Nagoya Protocol as well as information Parties are obliged to provide in accordance with the Protocol.</p>
+                              <ul class="nav nav-pills nav-stacked nav-stacked-compressed">
+                                <li> <a href=""> ABS National Focal Points </a></li>
+                                <li> <a href="" > Competent National Authorities </a></li>
+                                <li> <a href=""> ABS Procedures </a></li>
+                                <li> <a href=""> Legislative, Administrative or Policy Measures </a></li>
+                                <li> <a href=""> National Model Contractual Clauses </a></li>
+                                <li> <a href=""> Internationally Recognized Certificates of Compliance </a></li>
+                                <li> <a href=""> National Websites or Databases </a></li>
+                                <li> <a href=""> Checkpoints </a></li>
+                                <li> <a href=""> Checkpoint Communiqués </a></li>
+                                <li> <a href=""> National Reports </a></li>
+                              </ul>
+                            </div>
+                            <div class=" col-sm-4 mb10">
+                              <h4>SCBD Records</h4>
+                              <hr>
+                              <p class="small muted">National records are published by Governments and include national information relevant for the implementation of the Nagoya Protocol as well as information Parties are obliged to provide in accordance with the Protocol.</p>
+                              <ul class="nav nav-pills nav-stacked nav-stacked-compressed">
+                                <li> <a href=""> ABS National Focal Points </a></li>
+                                <li> <a href="" > Competent National Authorities </a></li>
+                                <li> <a href=""> ABS Procedures </a></li>
+                                <li> <a href=""> Legislative, Administrative or Policy Measures </a></li>
+                                <li> <a href=""> National Model Contractual Clauses </a></li>
+                                <li> <a href=""> Internationally Recognized Certificates of Compliance </a></li>
+                                <li> <a href=""> National Websites or Databases </a></li>
+                                <li> <a href=""> Checkpoints </a></li>
+                                <li> <a href=""> Checkpoint Communiqués </a></li>
+                                <li> <a href=""> National Reports </a></li>
+                              </ul>
+                            </div> 
+                          </div> 
+                      </div>
+
+                      
+                        <a type="button" template="#CNA-filters" class="hidden-xs btn btn-filter1 btn-md btn-default" data-container="body" data-toggle="popover" data-placement="right" html="true" data-original-title="" title="Competent National Authorities">
+                          
+                          <i class="pull-left align glyphicon glyphicon-remove" style="padding-right:10px;"></i> 
+                          <span style="white-space: normal;">Competent National Authorities</span>
+                          <i class="pull-right align glyphicon glyphicon-menu-right"></i>
+                          
+                        </a>
+                        <a type="button" template="#CNA-filters" class="hide visible-xs btn btn-filter1 btn-md btn-default" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Competent National Authorities">
+                          <i class="pull-left align glyphicon glyphicon-remove" style="padding-right:10px;"></i> 
+                          Competent National Authorities <i class="pull-right align glyphicon glyphicon-menu-right"></i>
+                        </a>
+                        <div class="hide popover-content" id="CNA-filters">
+
+                          <div class="input-group mb10">
+                            <div class="small text-uppercase">Free text</div> 
+                            <input type="text" class="form-control" placeholder="Search in CNAs for..." >
+                          </div>
+
+                           <div class="dropdown mb10">
+                            <div class="small text-uppercase">Jurisdiction</div> 
+                            <button  class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                              National
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                              <li><a href="#">National</a></li>
+                              <li><a href="#">Sub-national</a></li>
+                              <li><a href="#">Community</a></li>
+                            </ul>
+                          </div> 
+                        
+
+                          <div class="dropdown mb10" >
+                            <div class="small text-uppercase">Subject matter</div> 
+                            <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                              Select subject matter
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                              <li class="active"><a href="#">National</a></li>
+                              <li><a href="#">Sub-national</a></li>
+                            </ul>
+                          </div>
+
+                           <div class="dropdown mb10">
+                            <div class="small text-uppercase">Areas of access</div> 
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                              Select areas of access
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                              <li><a href="#">National</a></li>
+                              <li><a href="#">Sub-national</a></li>
+                            </ul>
+                          </div>
+
+                          <div class="mb10"><a href="#" style="color:#333"> <input type="checkbox"> Only CNAs that have issued permits</a></div>
+                          <div class="mb10"><a href="#" style="color:#333"> <i class="align glyphicon glyphicon-ban-circle" /> Disable fitler</a></div>
+                          <div class="mb10"><a href="#" style="color:#333"> <i class="align glyphicon glyphicon-remove" /> Remove filter</a></div>
+
+                        </div>
+
+
+                        <a type="button" template="#filter-options" class="hidden-xs btn btn-filter2 btn-md btn-default" data-container="body" data-toggle="popover" data-placement="right" html="true" data-original-title="" title="Filter options">
+                          <i class="pull-left align glyphicon glyphicon-remove" style="padding-right:10px;"></i> 
+                          <span style="white-space: normal;">National</span> 
+                          <i class="pull-right align glyphicon glyphicon-menu-right"></i>
+                        </a>
+
+                        <a type="button" template="#filter-options" class="hide visible-xs btn btn-filter2 btn-md btn-default" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Filter options">
+                          <i class="pull-left align glyphicon glyphicon-remove" style="padding-right:10px;"></i> National <i class="pull-right align glyphicon glyphicon-menu-right"></i>
+                        </a>
+
+                        <div class="hide popover-content popover-sm" id="filter-options">
+                          <ul class="nav nav-pills nav-stacked">
+
+                            <li>
+                              <div class="dropdown mb10">
+                                <div class="small text-uppercase">Jurisdiction</div> 
+                                <button  class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  National
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                  <li><a href="#">National</a></li>
+                                  <li><a href="#">Sub-national</a></li>
+                                  <li><a href="#">Community</a></li>
+                                </ul>
+                              </div> 
+                            </li>
+
+                            <li><a href="#"> <i class="align glyphicon glyphicon-ban-circle" /> Disable</a></li>
+                            <li><a href="#"> <i class="align glyphicon glyphicon-minus-sign" /> Exclude results</a></li>
+                            <li><a href="#"> <i class="align glyphicon glyphicon-remove" /> Remove</a></li>
+                          </ul>
+                        </div> 
+                    </li>
+                    <li class="nav-item">
+                        <a type="button" template="#country-filters" class="hidden-xs  btn btn-filter btn-lg btn-default" data-container="body" data-toggle="popover" data-placement="right" html="true" data-original-title="" title="Countries and regions">
+                          Countries 
+                          <i class="pull-right align glyphicon glyphicon glyphicon-menu-right"></i>
+                        </a>
+                        <a type="button" template="#country-filters" class="hidden-sm hidden-md hidden-lg btn btn-filter btn-lg btn-default" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Countries and regions">
+                          Countries
+                          <i class="pull-right align  glyphicon glyphicon-menu-right"></i>
+                        </a>
+                        <div class="hide popover-content" id="country-filters">
+                          
+                           <div class="input-group mb10">
+                            <input type="text" class="form-control" placeholder="Search for a country" >
+                          </div>
+                              <div class="popover-sm mb10">
+                              <h4 class="mb10">A</h4><hr>
+                              <ul class="nav nav-pills nav-stacked nav-stacked-compressed">
+                              <li class="active"> <a href="" > Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <li> <a href=""> Afghanistan </a></li>
+                              <h4 class="mb10">B</h4><hr>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              <li> <a href=""> Bahrain </a></li>
+                              </ul>
+                        </div>
+                        </div>
+
+                        <a type="button" template="#countryfilter-options" class="btn btn-filter2 btn-md btn-default" data-container="body" data-toggle="popover" data-placement="right" html="true" data-original-title="" title="Filter options">
+                          <i class="pull-left align glyphicon glyphicon-remove" style="padding-right:10px;"></i> 
+                          <span style="white-space: normal;">Afghanistan</span>
+                          <i class="pull-right align glyphicon glyphicon-menu-right"></i>
+                        </a>
+
+                        <div class="hide popover-content popover-sm" id="countryfilter-options">
+                          <ul class="nav nav-pills nav-stacked">
+                            <li>
+                              <div class="dropdown mb10">
+                                <div class="small text-uppercase">Country</div> 
+                                <button  class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  Afghanistan
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                  <li><a href="#">Afghanistan</a></li>
+                                  <li><a href="#">Afghanistan</a></li>
+                                  <li><a href="#">Afghanistan</a></li>
+                                </ul>
+                              </div> 
+                            </li>
+                            <li><a href="#"> <i class="align glyphicon glyphicon-map-marker" /> Go to country profile</a></li>
+                            <li><a href="#"> <i class="align glyphicon glyphicon-ban-circle" /> Disable</a></li>
+                            <li><a href="#"> <i class="align glyphicon glyphicon-minus-sign" /> Exclude results</a></li>
+                            <li><a href="#"> <i class="align glyphicon glyphicon-remove" /> Remove</a></li>
+                          </ul>
+                        </div> 
+                        
+
+                    </li>
+                    <li class="nav-item">
+                      <a type="button" template="#country-filters" class="hidden-xs  btn btn-filter btn-lg btn-default" data-container="body" data-toggle="popover" data-placement="right" html="true" data-original-title="" title="Countries and regions">
+                        Regions and groups 
+                        <i class="pull-right align glyphicon glyphicon glyphicon-menu-right"></i>
+                      </a>
+                      <a type="button" template="#country-filters" class="hidden-sm hidden-md hidden-lg btn btn-filter btn-lg btn-default" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Countries and regions">
+                        Regions and groups 
+                        <i class="pull-right align  glyphicon glyphicon-menu-right"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a type="button" template="#country-filters" class="hidden-xs  btn btn-filter btn-lg btn-default" data-container="body" data-toggle="popover" data-placement="right" html="true" data-original-title="" title="Countries and regions">
+                        Keywords
+                        <i class="pull-right align glyphicon glyphicon glyphicon-menu-right"></i>
+                      </a>
+                      <a type="button" template="#country-filters" class="hidden-sm hidden-md hidden-lg btn btn-filter btn-lg btn-default" data-container="body" data-toggle="popover" data-placement="bottom" html="true" data-original-title="" title="Countries and regions">
+                        Keywords
+                        <i class="pull-right align  glyphicon glyphicon-menu-right"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                        <a tabindex="3" class="btn btn-filter btn-lg btn-default" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">
+                            Dates
+                            <i class="pull-right glyphicon glyphicon glyphicon-menu-right"></i>
+                        </a>
+                    </li>
+                  </ul>
+            </div>
+            <div class="col-sm-9 col-md-8 col-lg-8">
+
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#all" aria-controls="all records" role="tab" data-toggle="tab">
+                          All <span class="hidden-xs hidden-sm"> records </span> (399)</a>
+                        </li>
+                        <li role="presentation"><a href="#national" aria-controls="national records" role="tab" data-toggle="tab">
+                          National <span class="hidden-xs hidden-sm"> records </span> (12)</a>
+                        </li>
+                        <li role="presentation"><a href="#reference" aria-controls="reference records" role="tab" data-toggle="tab">
+                          Reference <span class="hidden-xs hidden-sm"> records </span> (6)</a>
+                         </li>
+                        <li role="presentation"><a href="#scbd" aria-controls="scbd records" role="tab" data-toggle="tab">
+                          SCBD <span class="hidden-xs hidden-sm"> records </span> (3)</a>
+                        </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="all">
+                            
+                            <nav aria-label="Page navigation" class="text-center">
+                                <ul class="pagination">
+                                  <li>
+                                    <a href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                  <li><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">5</a></li>
+                                  <li>
+                                    <a href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </nav>    
+
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+                            <div class="temp" style="height: 80px; width: 100%; margin-bottom: 15px;" />
+
+                            <nav aria-label="Page navigation" class="text-center">
+                                <ul class="pagination">
+                                  <li>
+                                    <a href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                  <li><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">5</a></li>
+                                  <li>
+                                    <a href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </nav>    
+                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="national">...</div>
+                        <div role="tabpanel" class="tab-pane" id="reference">...</div>
+                        <div role="tabpanel" class="tab-pane" id="scbd">...</div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+popoverOptions = {
+        content: function () {
+            // Get the content from the hidden sibling.
+             var id = $(this).attr('template')
+             return $(id).html();
+        },
+        style: "max-width:300px;",
+        html: true
+  };
+
+  $('[data-toggle="popover"],[data-original-title]').popover(popoverOptions);
+
+$(document).on('click', function(e) {
+  $('[data-toggle="popover"],[data-original-title]').each(function() {
+    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+      $(this).popover('hide').data('bs.popover').inState.click = false // fix for BS 3.3.6
+    }
+
+  });
+});
+  </script>
+
+
+</div>
+ 
+
+<!--  FOOTER  -->
+<footer ng-cloak ng-show="routeLoaded" >
+    
+    <div class="container-fluid footer-page-container hidden-print text-right hidden-xs">
+        <a translation-url href="#" scroll-to="anchorTop" class="color-darkgrey"><i class="fa fa-arrow-circle-up"></i> back to top</a>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center" >
+                <div class="jumbotron" style="background-color:#FFF;">
+                    <h1>Need help? </h1>
+                    <p>Get in touch with us at: <a class="color-absch" href="mailto:absch@cbd.int" role="button">absch@cbd.int</a> </p>
+                  </div>
+            </div>
+        </div>
+
+        <div class="row  hidden-xs">
+            <div class="row">
+                <div class="col-xs-12" >
+                    <h2>THE CONVENTION ON BIOLOGICAL DIVERSITY </h2>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <h4>The Convention</h4>
+                <ul>
+                    <li><a translation-url href="https://www.cbd.int/convention/text/">Text of the Convention</a></li>
+                    <li><a translation-url href="https://www.cbd.int/convention/parties/list/">List of Parties</a></li>
+                    <li><a translation-url href="https://www.cbd.int/sp/">Strategic Plan</a></li>
+                    <li><a translation-url href="https://www.cbd.int/programmes/">Programmes and Issues</a></li>
+                    <li><a translation-url href="https://www.cbd.int/cooperation/">Cooperation &amp; Partnerships</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <h4>Cartagena Protocol</h4>
+                <ul>
+                    <li><a translation-url href="https://bch.cbd.int/protocol/text/">Text of the Protocol</a></li>
+                    <li><a translation-url href="https://bch.cbd.int/protocol/parties/">List of Parties</a></li>
+                    <li><a translation-url href="https://bch.cbd.int/protocol/issues/cpb_stplan.shtml">Strategic Plan</a></li>
+                    <li><a translation-url href="https://bch.cbd.int/">Biosafety Clearing-House</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <h4>Nagoya Protocol</h4>
+                <ul>
+                    <li><a translation-url href="https://www.cbd.int/abs/text/">Text of the Protocol</a></li>
+                    <li><a translation-url href="https://www.cbd.int/abs/nagoya-protocol/signatories/">List of Parties</a></li>
+                    <li><a translation-url href="https://absch.cbd.int/">ABS Clearing-House</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <h4>Programmes</h4>
+                <ul>
+                    <li><a translation-url href="https://www.cbd.int/programmes/">Thematic Programmes</a></li>
+                    <li><a translation-url href="https://www.cbd.int/programmes/">Cross-Cutting Issues</a></li>
+                    <li><a translation-url href="https://www.cbd.int/programmes/">Major Groups</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <h4>Information</h4>
+                <ul>
+                    <li><a translation-url href="https://www.cbd.int/meetings/">Meetings</a></li>
+                    <li><a translation-url href="https://www.cbd.int/notifications/">Notifications</a></li>
+                    <li><a translation-url href="https://www.cbd.int/countries/">National Information</a></li>
+                    <li><a translation-url href="https://www.cbd.int/information/publications.shtml">Publications</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <h4>Secretariat</h4>
+                <ul>
+                    <li><a translation-url href="https://www.cbd.int/secretariat/">Overview</a></li>
+                    <li><a translation-url href="https://www.cbd.int/secretariat/staff/">Staff</a></li>
+                    <li><a translation-url href="https://www.cbd.int/secretariat/vacancies/">Opportunities</a></li>
+                    <li><a translation-url href="https://www.cbd.int/contact/">Contact Us</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+<div class="row copyright">
+    <div class="col-xs-12 text-center">
+        <a translation-url="" href="http://www.cbd.int"><img src="/app/img/cbd-logo-en.svg" style="padding: 0 0 14px 0; margin: 0; width:200px;"></a>
+        <p style="font-size:10px;"><a translation-url="" href="http://www.cbd.int" class="ng-binding">© 2020 SCBD</a> | <a translation-url="" href="http://www.cbd.int/privacy">Privacy Policy</a> | <a translation-url="" href="http://www.cbd.int/terms">Terms of Use</a></p>
+    </div>
 </div>
 
 
-<div class="container container-padding">
-    <h1>Contents 2 cols</h1>
-    <div class="row">
-            <div class="col-sm-3 col-md-4 col-lg-5">
-                <div class="content-col temp">
-                    <h1> Column title </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-
-                <div class="content-col temp">
-                    <h2> Column title </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-
-                <div class="content-col temp">
-                    <h3> Column title </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-
-                <div class="content-col temp">
-                    <h4> Column title </h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-            </div>
-            <div class="col-sm-9 col-md-8 col-lg-7">
-             
-                        <div class="content-col temp">
-                            <h1> Column title </h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                 
-             
-                        <div class="content-col temp">
-                            <h2> Column title </h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-          
-                        <div class="content-col temp">
-                            <h3> Column title </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-
-                        <div class="content-col temp">
-                            <h4> Column title </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-            
-            </div>
-    </div>
-</div>
-   
 
 
+</footer>
+
+
+</body>
+</html>
