@@ -89,7 +89,7 @@ footer a{color:#777;}
 .nav-searchfilters .btn-search { height: 44px; background-color: #f2f2f2;}
 .popover-content .nav-pills > li > a {color:#333}
 .popover-content .nav-pills > li.active > a {color:#FFF; font-weight: bold;}
-.mb10 {margin-bottom: 20px;}
+.mb10 {margin-bottom: 15px;}
 .glyphicon-unchecked {margin-right: 5px;}
 .nav-stacked-compressed li > a {padding:2px 7px 2px 7px;}
 hr {margin:0;}
@@ -97,6 +97,7 @@ hr {margin:0;}
 .popover{max-width:990px; min-width:475px; margin-right:20px;}
 .popover-content  {padding-top:20px;}
 .popover-content  label {font-weight:450;}
+.popover-content .nav > li > a {margin:0;padding:0;}
 .popover  .form-control {width: 475px!important;}
 .popover-sm{max-width:475px; height:400px; overflow-y: scroll;}
 
